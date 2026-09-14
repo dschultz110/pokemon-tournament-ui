@@ -1,11 +1,22 @@
 <app-header />
 
-<app-sorting (sortByChange)="sortField.set($event)" (directionChange)="sortDirection.set($event)" />
+<app-sorting
+  (sortByChange)="sortField.set($event); currentPage.set(1)"
+  (directionChange)="sortDirection.set($event); currentPage.set(1)"
+/>
 
 <div class="container py-4">
   <div class="d-flex justify-content-end mb-3">
     <button type="button" class="btn btn-outline-primary" (click)="loadStatistics()">Start new tournament</button>
   </div>
 
-  <app-tournament-results [statistics]="sortedStatistics()" />
+  <app-tournament-results [statistics]="paginatedStatistics()" />
+
+  <app-pagination
+    [currentPage]="currentPage()"
+    [totalItems]="sortedStatistics().length"
+    [pageSize]="pageSize()"
+    (pageChange)="currentPage.set($event)"
+    (pageSizeChange)="pageSize.set($event); currentPage.set(1)"
+  />
 </div>
