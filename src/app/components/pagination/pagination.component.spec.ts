@@ -14,6 +14,9 @@ describe('PaginationComponent', () => {
 
     fixture = TestBed.createComponent(PaginationComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('currentPage', 1);
+    fixture.componentRef.setInput('totalItems', 20);
+    fixture.componentRef.setInput('pageSize', 8);
     fixture.detectChanges();
   });
 

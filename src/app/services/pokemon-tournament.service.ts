@@ -14,14 +14,8 @@ export class PokemonTournamentService {
 
   private readonly baseUrl = `${environment.apiUrl}/pokemon/tournament`;
 
-  getStatistics(sortBy?: SortField, sortDirection?: SortDirection): Observable<PokemonTournamentStatistic[]> {
-    let params = new HttpParams();
-    if (sortBy) {
-      params = params.set('sortBy', sortBy);
-    }
-    if (sortDirection) {
-      params = params.set('sortDirection', sortDirection);
-    }
+  getStatistics(sortBy: SortField, sortDirection: SortDirection): Observable<PokemonTournamentStatistic[]> {
+    const params = new HttpParams().set('sortBy', sortBy).set('sortDirection', sortDirection);
 
     return this.http.get<PokemonTournamentStatistic[]>(`${this.baseUrl}/statistics`, { params });
   }
