@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { PokemonTournamentStatistic } from '../models/pokemon-tournament-statistic.model';
@@ -9,9 +9,9 @@ import { SortDirection, SortField } from '../models/sort.model';
   providedIn: 'root'
 })
 export class PokemonTournamentService {
-  private readonly baseUrl = 'https://localhost:7166/pokemon/tournament';
+  private readonly http = inject(HttpClient);
 
-  constructor(private readonly http: HttpClient) {}
+  private readonly baseUrl = 'https://localhost:7166/pokemon/tournament';
 
   getStatistics(sortBy?: SortField, sortDirection?: SortDirection): Observable<PokemonTournamentStatistic[]> {
     let params = new HttpParams();

@@ -18,13 +18,13 @@ import { PokemonTournamentService } from '../services/pokemon-tournament.service
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  private readonly pokemonTournamentService = inject(PokemonTournamentService);
-
   statistics = signal<PokemonTournamentStatistic[]>([]);
   sortField = signal<SortField>('wins');
   sortDirection = signal<SortDirection>('desc');
   currentPage = signal(1);
   pageSize = signal(DEFAULT_PAGE_SIZE);
+
+  private readonly pokemonTournamentService = inject(PokemonTournamentService);
 
   sortedStatistics = computed(() => {
     const field = this.sortField();
