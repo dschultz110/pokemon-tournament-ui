@@ -1,7 +1,7 @@
 <div class="card statistics-card">
   <div class="statistics-card__header">
     <div class="statistics-card__badges">
-      <span class="badge type-badge" [style.background-color]="typeColor()">{{ statistics().type }}</span>
+      <span class="badge type-badge" [class]="statistics().type.toLowerCase()">{{ statistics().type }}</span>
     </div>
     <img class="statistics-card__img" [src]="imgUrl()" [alt]="displayName()">
   </div>
