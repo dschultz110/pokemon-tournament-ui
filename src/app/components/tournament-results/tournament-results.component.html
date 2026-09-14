@@ -1,7 +1,11 @@
-<div class="tournament-results">
-  @for (stat of statistics(); track stat.id) {
-    <app-statistics-card [statistics]="stat" />
-  } @empty {
-    <p class="text-muted">No tournament results yet.</p>
-  }
-</div>
+@if (statistics().length) {
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    @for (stat of statistics(); track stat.id) {
+      <div class="col">
+        <app-statistics-card [statistics]="stat" />
+      </div>
+    }
+  </div>
+} @else {
+  <p class="text-muted">No tournament results yet.</p>
+}
