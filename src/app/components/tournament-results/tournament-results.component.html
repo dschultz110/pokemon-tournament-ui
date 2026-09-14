@@ -1,0 +1,7 @@
+<div class="tournament-results">
+  @for (stat of statistics(); track stat.id) {
+    <app-statistics-card [statistics]="stat" />
+  } @empty {
+    <p class="text-muted">No tournament results yet.</p>
+  }
+</div>

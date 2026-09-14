@@ -1,0 +1,11 @@
+<app-header />
+
+<app-sorting (sortByChange)="sortField.set($event)" (directionChange)="sortDirection.set($event)" />
+
+<div class="container py-4">
+  <div class="d-flex justify-content-end mb-3">
+    <button type="button" class="btn btn-outline-primary" (click)="loadStatistics()">Start new tournament</button>
+  </div>
+
+  <app-tournament-results [statistics]="sortedStatistics()" />
+</div>

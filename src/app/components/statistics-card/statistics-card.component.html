@@ -1,0 +1,49 @@
+<div class="card statistics-card">
+  <div class="statistics-card__header">
+    <div class="statistics-card__badges">
+      <span class="badge type-badge" [style.background-color]="typeColor()">{{ statistics().type }}</span>
+    </div>
+    <img class="statistics-card__img" [src]="imgUrl()" [alt]="displayName()">
+  </div>
+
+  <div class="card-body pt-2">
+    <h5 class="card-title mb-0">{{ displayName() }}</h5>
+    <p class="text-muted small mb-3">{{ displayId() }}</p>
+
+    <div class="row text-center g-2 mb-3">
+      <div class="col-4">
+        <div class="stat-box">
+          <div class="stat-label">Wins</div>
+          <div class="stat-value text-success">{{ statistics().wins }}</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="stat-box">
+          <div class="stat-label">Losses</div>
+          <div class="stat-value text-danger">{{ statistics().losses }}</div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="stat-box">
+          <div class="stat-label">Ties</div>
+          <div class="stat-value text-primary">{{ statistics().ties }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between small mb-1">
+      <span class="text-muted">Win rate</span>
+      <span class="fw-semibold">{{ winRate() }}%</span>
+    </div>
+    <div class="progress" style="height: 8px;">
+      <div
+        class="progress-bar bg-success"
+        role="progressbar"
+        [style.width.%]="winRate()"
+        [attr.aria-valuenow]="winRate()"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+</div>

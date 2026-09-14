@@ -1,0 +1,56 @@
+.statistics-card {
+  width: 18rem;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.statistics-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1rem 0;
+}
+
+.statistics-card__badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.type-badge {
+  text-transform: capitalize;
+  font-weight: 500;
+  padding: 0.35em 0.85em;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.trophy {
+  font-size: 1rem;
+}
+
+.statistics-card__img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #f1f3f5;
+  padding: 0.5rem;
+}
+
+.stat-box {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}

@@ -1,0 +1,31 @@
+<section class="sorting-bar py-3">
+  <div class="row g-3 justify-content-center">
+    <div class="col-auto">
+      <label for="sortBy" class="form-label small text-muted mb-1">Sort by</label>
+      <select
+        id="sortBy"
+        class="form-select"
+        [value]="sortBy()"
+        (change)="onSortByChange($event)"
+      >
+        <option value="wins">Wins</option>
+        <option value="losses">Losses</option>
+        <option value="ties">Ties</option>
+        <option value="name">Name</option>
+        <option value="id">ID</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <label for="direction" class="form-label small text-muted mb-1">Direction</label>
+      <select
+        id="direction"
+        class="form-select"
+        [value]="direction()"
+        (change)="onDirectionChange($event)"
+      >
+        <option value="desc">Descending</option>
+        <option value="asc">Ascending</option>
+      </select>
+    </div>
+  </div>
+</section>
